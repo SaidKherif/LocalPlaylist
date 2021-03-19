@@ -1,0 +1,14 @@
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "firstName": "Isabel",
+    "lastName": "Locman",
+    "email": "Jaylon.@gmail.com",
+    "username": "Maximillia84",
+    "password": "S6m8h5B3lAxjJI",
+    "birthday": "Fri Jul 17 2020 15:43:54 GMT+0200 (Central European Summer Time)"
+}
+###
+GET http://localhost:5000
+INSERT INTO users VALUES ('Mauricio', 'Lockman, 'Jaylon.Ondricka60@gmail.com', 'Isaac_White3', 'S61m8h5B3lAxjJI)';
