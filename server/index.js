@@ -4,7 +4,7 @@ const { PORT } = require('./Config/Config');
 
 const app = express();
 
-const register = require('./routes/registerRoute');
+const UserRoute = require('./routes/UserRoute');
 const { initTable } = require('./models/initClientDb');
 
 app.use(express.json());
@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 // !------------------------------------------------------------------------
 
-app.use('/user', register);
+app.use('/user', UserRoute);
 
 app.get('/', (req, res) => {
   res.send('tete');

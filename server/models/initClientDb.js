@@ -17,10 +17,11 @@ const myClient = new Client({
 myClient.connect();
 
 // INIT TABLE OF DATABASE
+// * CREATE TABLE USERS IF NOT EXISTS (Launch at the server start)
 const initTable = async () => {
-  // * CREATE TABLE USERS IF NOT EXISTS (Launch at the server start)
-  await myClient.query(
-    `CREATE TABLE IF NOT EXISTS users (
+  try {
+    await myClient.query(
+      `CREATE TABLE IF NOT EXISTS users (
     user_id serial PRIMARY KEY,
     firstName varchar NOT NULL,
     lastName varchar NOT NULL,
@@ -28,10 +29,13 @@ const initTable = async () => {
     password varchar NOT NULL,
     email varchar UNIQUE NOT NULL
   );`,
-  );
+    );
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
   // * ------------------------------------------------------------------
 };
-console.log('teret' + myClient);
 module.exports = {
   initTable,
   client: myClient,
