@@ -30,17 +30,12 @@ const registerUserService = async (req, res) => {
 
   registerController
     .setUserInDb()
-    .then(() => {
-      return res
+    .then(() =>
+      res
         .status(200)
-        .json({ Error: '', Response: `USER ${username} Set in database` });
-    })
-    .catch((err) => {
-      console.log('error ====== ' + err.message);
-      return res.status(400).json({
-        Error: err.message,
-      });
-    });
+        .json({ Error: '', Response: `USER ${username} Set in database` }),
+    )
+    .catch((err) => res.status(401).json({ Error: err.message }));
 };
 // * -----------------------------------------------------------------------------------------------
 

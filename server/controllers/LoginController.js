@@ -1,6 +1,4 @@
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-
 const { client } = require('../models/initClientDb');
 const { saltRounds, myPlaintextPassword } = require('../Config/Config');
 

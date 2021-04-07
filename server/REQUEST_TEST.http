@@ -4,8 +4,8 @@ Content-Type: application/json
 {
     "firstName": "said",
     "lastName": "Kherif",
-    "email": "said.kherif@gmail.com",
-    "username": "saidal",
+    "email": "said@gmail.com",
+    "username": "saidaltest",
     "password": "S6m8h5B3lAxjJI"
 }
 ###
@@ -13,6 +13,12 @@ POST http://localhost:5000/user/login
 Content-Type: application/json
 
 {
-    "username": "saidal",
-    "password": "S6m8h5B3lxjJI"
+    "username": "saidaltest",
+    "password": "S6m8h5B3lAxjJI"
 }
+###
+GET http://localhost:5000/testcsv
+###
+GET http://localhost:5000/song/songinfo/booba/40
+###
+GET http://localhost:5000/songbytitle/crybaby/cherry

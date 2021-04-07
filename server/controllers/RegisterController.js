@@ -10,7 +10,7 @@ class RegisterController {
   constructor(CurrUser) {
     this.CurrUser = CurrUser;
   }
-
+  
   // * @METHOD TO SET USER IN DB  ->  Use the Current User defined in the scope
   async setUserInDb() {
     this.CurrUser.password = await bcrypt.hash(
